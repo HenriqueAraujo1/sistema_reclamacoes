@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registro de Reclamação</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <form id="form-reclamacao">
+    <h1>Registrar reclamação</h1>
+
+    <label for="numero_onibus">Númeração do ônibus:</label>
+    <input type="text" id="numero_onibus" name="numero_onibus" required>
+
+    <label for="linha">Linha:</label>
+    <input type="text" id="linha" name="linha" required>
+
+    <label for="horario">Horário do acontecido:</label>
+    <input type="time" id="horario" name="horario" required>
+
+    <label for="nome_motorista">Nome do motorista (se informado):</label>
+    <input type="text" id="nome_motorista" name="nome_motorista">
+
+    <label for="descricao">Descrição:</label>
+    <textarea id="descricao" name="descricao" required></textarea>
+
+    <button type="submit">Enviar reclamação</button>
+
+    <div id="resposta"></div>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>

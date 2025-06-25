@@ -1,0 +1,109 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Corpo da página */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #e3f2fd, #ffffff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Formulário */
+form {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  animation: fadeIn 0.7s ease;
+}
+
+/* Título */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1976d2;
+}
+
+/* Rótulos */
+label {
+  margin-top: 15px;
+  display: block;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Campos de entrada e texto */
+input,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+}
+
+/* Efeitos ao focar */
+input:focus,
+textarea:focus {
+  border-color: #1976d2;
+  outline: none;
+}
+
+/* Textarea com tamanho ajustável */
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Botão de envio */
+button {
+  width: 100%;
+  background-color: #1976d2;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover no botão */
+button:hover {
+  background-color: #125ca1;
+  transform: scale(1.02);
+}
+
+/* Resposta do backend */
+#resposta {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: green;
+  animation: fadeIn 0.6s ease;
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
