@@ -22,7 +22,7 @@ exports.criarReclamacao = (req, res) => {
 
 exports.listarReclamacoes = (req, res) => {
   const query = `
-    SELECT numero_onibus, linha, data_ocorrencia, horario, nome_motorista, descricao
+    SELECT numero_onibus, linha, data_ocorrencia, horario, nome_motorista, descricao, protocolo
     FROM reclamacoes
   `;
 

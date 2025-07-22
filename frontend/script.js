@@ -30,6 +30,7 @@ async function carregarReclamacoes() {
         <td>${item.horario}</td>
         <td>${item.nome_motorista || '-'}</td>
         <td>${item.descricao}</td>
+        <td>${item.protocolo || '-'}</td>
       `;
 
       corpoTabela.appendChild(linha);
