@@ -1,35 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Registro de Reclamação</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sistema de Reclamações</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <form id="form-reclamacao">
-    <h1>Registrar reclamação</h1>
+  <div class="container">
+    <h1>Registrar Reclamação</h1>
 
-    <label for="numero_onibus">Númeração do ônibus:</label>
-    <input type="text" id="numero_onibus" name="numero_onibus" required>
+    <!-- Botão para abrir a lista de reclamações -->
+    <button id="btn-ver-reclamacoes">Ver Reclamações</button>
 
-    <label for="linha">Linha:</label>
-    <input type="text" id="linha" name="linha" required>
+    <form id="formReclamacao">
+      <label for="numero_onibus">Número do ônibus</label>
+      <input type="text" id="numero_onibus" name="numero_onibus" required />
 
-    <label for="horario">Horário do acontecido:</label>
-    <input type="time" id="horario" name="horario" required>
+      <label for="linha">Linha</label>
+      <input type="text" id="linha" name="linha" required />
 
-    <label for="nome_motorista">Nome do motorista (se informado):</label>
-    <input type="text" id="nome_motorista" name="nome_motorista">
+      <label for="horario">Horário do ocorrido</label>
+      <input type="time" id="horario" name="horario" required />
 
-    <label for="descricao">Descrição:</label>
-    <textarea id="descricao" name="descricao" required></textarea>
+      <label for="data_ocorrencia">Data do ocorrido</label>
+      <input type="date" id="data_ocorrencia" name="data_ocorrencia" required />
 
-    <button type="submit">Enviar reclamação</button>
+      <label for="nome_motorista">Nome do motorista</label>
+      <input type="text" id="nome_motorista" name="nome_motorista" />
 
-    <div id="resposta"></div>
-  </form>
+      <label for="descricao">Descrição</label>
+      <textarea id="descricao" name="descricao" rows="4" required></textarea>
+
+      <button type="submit">Registrar Reclamação</button>
+    </form>
+
+    <div id="mensagem"></div>
+  </div>
 
   <script src="script.js"></script>
+  <script>
+    // Abre a página de reclamações em nova aba
+    document.getElementById('btn-ver-reclamacoes').addEventListener('click', () => {
+      window.open('reclamacoes.html', '_blank');
+    });
+  </script>
 </body>
 </html>

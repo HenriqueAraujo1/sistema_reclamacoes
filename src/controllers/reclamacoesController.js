@@ -5,11 +5,12 @@ function gerarProtocolo() {
 }
 
 exports.criarReclamacao = (req, res) => {
-  const { numero_onibus, linha, horario, nome_motorista, descricao } = req.body;
+  const { numero_onibus, linha, data_ocorrencia, horario, nome_motorista, descricao } = req.body;
   const protocolo = gerarProtocolo();
 
-  const query = 'INSERT INTO reclamacoes (numero_onibus, linha, horario, nome_motorista, descricao, protocolo) VALUES (?, ?, ?, ?, ?, ?)';
-  const valores = [numero_onibus, linha, horario, nome_motorista, descricao, protocolo];
+  const query =
+    'INSERT INTO reclamacoes (numero_onibus, linha, data_ocorrencia, horario, nome_motorista, descricao, protocolo) VALUES (?, ?, ?, ?, ?, ?, ?)';
+  const valores = [numero_onibus, linha, data_ocorrencia, horario, nome_motorista, descricao, protocolo];
 
   db.query(query, valores, (err, result) => {
     if (err) {
@@ -20,7 +21,12 @@ exports.criarReclamacao = (req, res) => {
 };
 
 exports.listarReclamacoes = (req, res) => {
-  db.query('SELECT * FROM reclamacoes', (err, results) => {
+  const query = `
+    SELECT numero_onibus, linha, data_ocorrencia, horario, nome_motorista, descricao
+    FROM reclamacoes
+  `;
+
+  db.query(query, (err, results) => {
     if (err) {
       return res.status(500).json({ erro: 'Erro ao buscar reclamações' });
     }
